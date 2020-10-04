@@ -18,12 +18,12 @@
                     $(this).children("span").attr("class","glyphicon glyphicon-menu-down");
                 }
             });
-            var arr=["admin.html",2,3,4,5,6];
+            var arr=["adminServlet?op=list","userServlet?op=list","productServlet?op=list","categoryServlet?op=list","orderServlet?op=list"];
             $("#main-left>ul>li:odd").click(function(){
                 $("#main-right").empty();
                 var index=$(this).index();
                 var num=(index-1)/2;
-                $("#main-right").append("<iframe src='"+arr[num]+"' frameborder='0' width='100%' style='min-height: 550px;'></iframe>");
+                $("#main-right").append("<iframe src='<%=application.getContextPath()%>/"+arr[num]+"' frameborder='0' width='100%' style='min-height: 550px;'></iframe>");
             });
         })
     </script>
@@ -60,16 +60,10 @@
                         <li><a href="javascript:"><font class="glyphicon glyphicon-tag"></font>&nbsp;&nbsp;商品管理</a></li>
                     </ul>
                 </li>
-                <li class="menu"><font class="glyphicon glyphicon-th-list"></font>&nbsp;&nbsp;一级分类管理<span class="glyphicon glyphicon-menu-right"></span></li>
+                <li class="menu"><font class="glyphicon glyphicon-th-list"></font>&nbsp;&nbsp;分类管理<span class="glyphicon glyphicon-menu-right"></span></li>
                 <li>
                     <ul>
-                        <li><a href="javascript:"><font class="glyphicon glyphicon-tag"></font>&nbsp;&nbsp;一级分类管理</a></li>
-                    </ul>
-                </li>
-                <li class="menu"><font class="glyphicon glyphicon-th-list"></font>&nbsp;&nbsp;二级分类管理<span class="glyphicon glyphicon-menu-right"></span></li>
-                <li>
-                    <ul>
-                        <li><a href="javascript:"><font class="glyphicon glyphicon-tag"></font>&nbsp;&nbsp;二级分类管理</a></li>
+                        <li><a href="javascript:"><font class="glyphicon glyphicon-tag"></font>&nbsp;&nbsp;分类管理</a></li>
                     </ul>
                 </li>
                 <li class="menu"><font class="glyphicon glyphicon-th-list"></font>&nbsp;&nbsp;订单管理<span class="glyphicon glyphicon-menu-right"></span></li>
