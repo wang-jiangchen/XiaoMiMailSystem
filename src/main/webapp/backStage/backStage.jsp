@@ -4,7 +4,7 @@
     <title>小米商城后台管理系统</title>
     <link rel="icon" href="<%=application.getContextPath()%>/img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="<%=application.getContextPath()%>/css/bootstrap.css"/>
-    <link rel="stylesheet" type="text/css" href="<%=application.getContextPath()%>/css/background.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=application.getContextPath()%>/css/backStage.css"/>
     <script type="text/javascript" src="<%=application.getContextPath()%>/js/jquery-1.11.3.js" ></script>
     <script type="text/javascript" src="<%=application.getContextPath()%>/js/bootstrap.js" ></script>
     <script type="text/javascript">

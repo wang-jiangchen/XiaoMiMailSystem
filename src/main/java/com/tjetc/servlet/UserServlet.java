@@ -16,6 +16,12 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        String op=req.getParameter("op");
+        if ("list".equals(op)){
+            this.list(req,resp);
+        }
+    }
+    private void list(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("backStage/user/user.jsp").forward(req,resp);
     }
 }

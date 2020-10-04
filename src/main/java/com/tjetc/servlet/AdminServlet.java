@@ -22,7 +22,6 @@ public class AdminServlet extends HttpServlet {
     }
 
     private void list(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        /*req.setAttribute("msg","jsp传值成功");*/
-        req.getRequestDispatcher("background/admin/admin.jsp").forward(req,resp);
+        req.getRequestDispatcher("backStage/admin/admin.jsp").forward(req,resp);
     }
 }
