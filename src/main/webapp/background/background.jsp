@@ -17,7 +17,14 @@
                 }else{
                     $(this).children("span").attr("class","glyphicon glyphicon-menu-down");
                 }
-            })
+            });
+            var arr=["admin.html",2,3,4,5,6];
+            $("#main-left>ul>li:odd").click(function(){
+                $("#main-right").empty();
+                var index=$(this).index();
+                var num=(index-1)/2;
+                $("#main-right").append("<iframe src='"+arr[num]+"' frameborder='0' width='100%' style='min-height: 550px;'></iframe>");
+            });
         })
     </script>
 </head>
@@ -74,7 +81,10 @@
             </ul>
         </div>
         <div id="main-right">
-            <iframe src="admin.jsp" frameborder="0" width="100%" style="min-height: 550px;"></iframe>
+            <div id="title" class="text-center">
+                <span><b>系统首页</b></span>
+            </div>
+            <h4>&nbsp;&nbsp;&nbsp;欢迎进入小米商城后台管理系统，选择左侧功能进行管理。。。。。。</h4>
         </div>
     </div>
 </div>
