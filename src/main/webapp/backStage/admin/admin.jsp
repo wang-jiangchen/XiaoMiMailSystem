@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>管理员管理</title>
@@ -59,51 +60,17 @@
             <th>管理员密码</th>
             <th>操作</th>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>admin</td>
-            <td>12345</td>
-            <td>
-                <a href="#" class="btn btn-primary btn-info" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="#" class="btn btn-primary btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
-            </td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>admin</td>
-            <td>12345</td>
-            <td>
-                <a href="#" class="btn btn-primary btn-info" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="#" class="btn btn-primary btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
-            </td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>admin</td>
-            <td>12345</td>
-            <td>
-                <a href="#" class="btn btn-primary btn-info" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="#" class="btn btn-primary btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
-            </td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>admin</td>
-            <td>12345</td>
-            <td>
-                <a href="#" class="btn btn-primary btn-info" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="#" class="btn btn-primary btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
-            </td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>admin</td>
-            <td>12345</td>
-            <td>
-                <a href="#" class="btn btn-primary btn-info" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="#" class="btn btn-primary btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
-            </td>
-        </tr>
+        <c:forEach items="${list}" var="admin">
+            <tr>
+                <td>${admin.id}</td>
+                <td>${admin.name}</td>
+                <td>${admin.password}</td>
+                <td>
+                    <a href="<%=application.getContextPath()%>/admin?op=findById&id=${admin.id}" class="btn btn-primary btn-info" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a href="<%=application.getContextPath()%>/admin?op=del&id=${admin.id}" class="btn btn-primary btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
+                </td>
+            </tr>
+        </c:forEach>
         <tr class="text-center">
             <td colspan="10">
                 <button onclick="fenye(1)">首页</button>
