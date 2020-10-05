@@ -60,7 +60,7 @@
             <th>管理员密码</th>
             <th>操作</th>
         </tr>
-        <c:forEach items="${list}" var="admin">
+        <c:forEach items="${adminPage.data}" var="admin">
             <tr>
                 <td>${admin.id}</td>
                 <td>${admin.name}</td>
@@ -75,7 +75,7 @@
             <td colspan="10">
                 <button onclick="fenye(1)">首页</button>
                 <button onclick="fenye(${page.prePage})">上一页</button>
-                1/4
+                ${adminPage.currentPage}/${adminPage.getTotalPageCount()}
                 <button onclick="fenye(${page.nextPage})">下一页</button>
                 <button onclick="fenye(${page.pages})">尾页</button>
             </td>
