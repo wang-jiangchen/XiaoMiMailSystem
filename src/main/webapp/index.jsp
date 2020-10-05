@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>小米商城 - 小米10 Pro、Redmi 10X、小米MIX Alpha，小米电视官方网站</title>
+
+
     <link rel="icon" href="<%=application.getContextPath()%>/img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="<%=application.getContextPath()%>/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="<%=application.getContextPath()%>/css/index.css" />

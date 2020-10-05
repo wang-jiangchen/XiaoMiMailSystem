@@ -11,7 +11,7 @@ public class User {
     private String phone;
     private String email;
     private int state;
-    private List<FastMail> fastMails=new ArrayList<>();
+    private List<FastMail> fastMails=new ArrayList<FastMail>();
 
     public User() {
     }

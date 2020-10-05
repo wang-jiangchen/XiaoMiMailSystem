@@ -11,7 +11,7 @@ public class Orders {
     private int state;//订单状态 1未付款 2已付款 3未收货 4交易完成(购物车确认订单后state=1，提交订单付款后为2，
     private User user;
     private FastMail fastMail;
-    private List<OrderItem> orderItems=new ArrayList<>();
+    private List<OrderItem> orderItems=new ArrayList<OrderItem>();
 
     public Orders() {
     }

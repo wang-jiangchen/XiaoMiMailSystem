@@ -7,7 +7,7 @@ public class Category {
     private int id;
     private String name;
     private Category category;
-    private List<Product> products=new ArrayList<>();
+    private List<Product> products=new ArrayList<Product>();
 
     public Category() {
     }
