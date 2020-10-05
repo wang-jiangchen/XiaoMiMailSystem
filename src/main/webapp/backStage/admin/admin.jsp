@@ -66,18 +66,18 @@
                 <td>${admin.name}</td>
                 <td>${admin.password}</td>
                 <td>
-                    <a href="<%=application.getContextPath()%>/admin?op=findById&id=${admin.id}" class="btn btn-primary btn-info" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
-                    <a href="<%=application.getContextPath()%>/admin?op=del&id=${admin.id}" class="btn btn-primary btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
+                    <a href="<%=application.getContextPath()%>/adminServlet?op=findById&id=${admin.id}" class="btn btn-primary btn-info" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a href="<%=application.getContextPath()%>/adminServlet?op=del&id=${admin.id}" class="btn btn-primary btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
                 </td>
             </tr>
         </c:forEach>
         <tr class="text-center">
             <td colspan="10">
-                <button onclick="fenye(1)">首页</button>
-                <button onclick="fenye(${page.prePage})">上一页</button>
-                ${adminPage.currentPage}/${adminPage.getTotalPageCount()}
-                <button onclick="fenye(${page.nextPage})">下一页</button>
-                <button onclick="fenye(${page.pages})">尾页</button>
+                <a class="btn btn-default" href="<%=application.getContextPath()%>/adminServlet?op=list&pageNum=1">首页</a>
+                <a class="btn btn-default" href="<%=application.getContextPath()%>/adminServlet?op=list&pageNum=${adminPage.prev()}">上一页</a>
+                当前页&nbsp;${adminPage.currentPage}/${adminPage.getTotalPageCount()}
+                <a class="btn btn-default" href="<%=application.getContextPath()%>/adminServlet?op=list&pageNum=${adminPage.next()}">下一页</a>
+                <a class="btn btn-default" href="<%=application.getContextPath()%>/adminServlet?op=list&pageNum=${adminPage.getTotalPageCount()}">尾页</a>
             </td>
         </tr>
     </table>

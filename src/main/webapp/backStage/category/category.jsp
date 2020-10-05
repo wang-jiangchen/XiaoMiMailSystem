@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>分类管理</title>
@@ -59,58 +60,24 @@
             <th>上级分类名称</th>
             <th>操作</th>
         </tr>
+        <c:forEach items="${categoryPage.data}" var="cate">
         <tr>
-            <td>1</td>
-            <td>小米手机</td>
-            <td>手机</td>
+            <td>${cate.id}</td>
+            <td>${cate.name}</td>
+            <td>${cate.category.name}</td>
             <td>
-                <a href="#" class="btn btn-primary btn-info" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="#" class="btn btn-primary btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
+                <a href="<%=application.getContextPath()%>/categoryServlet?op=findById&id=${cate.id}" class="btn btn-primary btn-info" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a href="<%=application.getContextPath()%>/categoryServlet?op=del&id=${cate.id}" class="btn btn-primary btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
             </td>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>小米手机</td>
-            <td>手机</td>
-            <td>
-                <a href="#" class="btn btn-primary btn-info" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="#" class="btn btn-primary btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
-            </td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>小米手机</td>
-            <td>手机</td>
-            <td>
-                <a href="#" class="btn btn-primary btn-info" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="#" class="btn btn-primary btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
-            </td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>小米手机</td>
-            <td>手机</td>
-            <td>
-                <a href="#" class="btn btn-primary btn-info" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="#" class="btn btn-primary btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
-            </td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>小米手机</td>
-            <td>手机</td>
-            <td>
-                <a href="#" class="btn btn-primary btn-info" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="#" class="btn btn-primary btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
-            </td>
-        </tr>
+        </c:forEach>
         <tr class="text-center">
             <td colspan="10">
-                <button onclick="fenye(1)">首页</button>
-                <button onclick="fenye(${page.prePage})">上一页</button>
-                1/4
-                <button onclick="fenye(${page.nextPage})">下一页</button>
-                <button onclick="fenye(${page.pages})">尾页</button>
+                <a class="btn btn-default" href="<%=application.getContextPath()%>/categoryServlet?op=list&pageNum=1">首页</a>
+                <a class="btn btn-default" href="<%=application.getContextPath()%>/categoryServlet?op=list&pageNum=${categoryPage.prev()}">上一页</a>
+                当前页&nbsp;${categoryPage.currentPage}/${categoryPage.getTotalPageCount()}
+                <a class="btn btn-default" href="<%=application.getContextPath()%>/categoryServlet?op=list&pageNum=${categoryPage.next()}">下一页</a>
+                <a class="btn btn-default" href="<%=application.getContextPath()%>/categoryServlet?op=list&pageNum=${categoryPage.getTotalPageCount()}">尾页</a>
             </td>
         </tr>
     </table>
