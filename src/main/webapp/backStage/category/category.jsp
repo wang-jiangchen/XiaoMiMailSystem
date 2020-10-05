@@ -40,6 +40,17 @@
             color: #fff;
         }
     </style>
+    <script>
+        $(function () {
+            $("#btn-search").click(function () {
+                var name=$("#input-search").val();
+                window.location.href="<%=application.getContextPath()%>/categoryServlet?op=findNameLike&name="+name;
+            });
+            $("#btn-add").click(function () {
+                window.location.href="<%=application.getContextPath()%>/backStage/category/addCategory.jsp";
+            });
+        })
+    </script>
 </head>
 <body style="margin: 10px;">
 <div id="title" class="text-center">
